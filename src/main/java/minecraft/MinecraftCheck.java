@@ -55,7 +55,7 @@ public class MinecraftCheck {
 
 
             tmp = tmp.replaceAll("[^\\p{Print}]", "");
-            serverInfo = tmp.substring(tmp.indexOf("{")).trim() + "TEST";
+            serverInfo = tmp.substring(tmp.indexOf("{")).trim() + "TEST2";
             socket.shutdownOutput();
             socket.close();
 
