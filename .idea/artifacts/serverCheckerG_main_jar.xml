@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="serverCheckerG.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/serverCheckerG_main_jar</output-path>
+    <root id="archive" name="serverCheckerG.main.jar">
+      <element id="module-output" name="serverCheckerG.main" />
+    </root>
+  </artifact>
+</component>

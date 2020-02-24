@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>serverCheckerG</id>
+    <name>serverCheckerPlugin</name>
+    <vendor email="paulhaeussler@mailbox.org" url="http://www.bilbosjournal.com">Bilbosjournal</vendor>
+
+    <description><![CDATA[
+        What even is this<br>
+        sooos <br>
+        and why does this has a minimum length
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
