@@ -1,5 +1,6 @@
 package main;
 
+import factorio.FactorioCheck;
 import factorio.FactorioServerlistCheck;
 import minecraft.MinecraftCheck;
 import server.ServerHandler;
@@ -7,6 +8,7 @@ import server.ServerHandler;
 public class Main {
 
     public static MinecraftCheck mc;
+    public static FactorioCheck fc;
     public static ServerHandler sh;
 
     public static void main(String[] args){
@@ -15,6 +17,8 @@ public class Main {
     }
 
     public static void callChecks(){
+
         mc = new MinecraftCheck("bilbosjournal.com");
+        fc = new FactorioCheck("bilbosjournal.com");
     }
 }
