@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class FactorioCheck {
 
     public String hostname;
-    public String serverData;
+    public String serverData = "";
     private int serverPort = 34197;
     private String hexStrUDPDiscover = "0200000012091bc2a8ee7297";
     private String hexStrUDPIdentify = "2401800100000000a8ee72972966213b691077780e78584461726b56696b696e675878000000751da6cb33123c3c010462617365001209514e12d600";
@@ -30,8 +30,8 @@ public class FactorioCheck {
             Thread t = new Thread(){
                 public void run(){
                     running = true;
-                    runPair(hexStrUDPDiscover);
-                    runPair(hexStrUDPIdentify);
+                    serverData += runPair(hexStrUDPDiscover) + ":::";
+                    serverData += runPair(hexStrUDPIdentify);
                     System.out.println("Thread exited");
                 }
             };

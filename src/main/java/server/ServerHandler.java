@@ -26,7 +26,7 @@ public class ServerHandler {
         @Override
         public void handle(HttpExchange t) throws IOException {
             Main.callChecks();
-            String response = Main.mc.serverInfo;
+            String response = Main.mc.serverInfo + "\n" + Main.fc.serverData;
             t.sendResponseHeaders(200, response.length());
             OutputStream os = t.getResponseBody();
             os.write(response.getBytes());
