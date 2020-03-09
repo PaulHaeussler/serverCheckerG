@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args){
         callChecks();
-        try{ sh = new ServerHandler(); } catch (Exception e) { e.printStackTrace(); }
+        try{ sh = new ServerHandler(mc.serverInfo); } catch (Exception e) { e.printStackTrace(); }
     }
 
     public static void callChecks(){

@@ -14,19 +14,33 @@ import java.net.Socket;
 public class ServerHandler {
 
     static final int PORT = 11555;
+    private MyHandler h;
 
-    public ServerHandler() throws Exception {
+    public ServerHandler(String ServerInfo) throws Exception {
         HttpServer server = HttpServer.create(new InetSocketAddress(PORT), 0);
-        server.createContext("/serverInfo.json", new MyHandler());
+        h = new MyHandler(ServerInfo);
+        server.createContext("/serverInfo.json", h);
         server.setExecutor(null); // creates a default executor
         server.start();
     }
 
+    public void updateServerInfo(String newInfo){
+        h.serverInfo = newInfo;
+    }
+
     static class MyHandler implements HttpHandler {
+
+        private String serverInfo;
+
+        public MyHandler(String ServerInfo){
+            super();
+            serverInfo = ServerInfo;
+        }
+
         @Override
         public void handle(HttpExchange t) throws IOException {
             Main.callChecks();
-            String response = Main.mc.serverInfo + "\n" + Main.fc.serverData;
+            String response = serverInfo;
             t.sendResponseHeaders(200, response.length());
             OutputStream os = t.getResponseBody();
             os.write(response.getBytes());
