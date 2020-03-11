@@ -41,6 +41,7 @@ public class ServerHandler {
         public void handle(HttpExchange t) throws IOException {
             Main.callChecks();
             String response = serverInfo;
+            t.getResponseHeaders().set("Access-Control-Allow-Origin", "http://bilbosjournal.com");
             t.sendResponseHeaders(200, response.length());
             OutputStream os = t.getResponseBody();
             os.write(response.getBytes());
