@@ -9,7 +9,7 @@ public class Helper {
         put(7777, "Terraria");
         put(25565, "Minecraft");
         put(25566, "Minecraft Modded");
-        put(27003, "Avorion");
+        put(27000, "Avorion");
         put(34197, "Factorio");
     }};
 
