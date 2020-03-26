@@ -30,6 +30,7 @@ public class Main2 {
         tcpPorts.add(27000);
         udpPorts.add(34197);
         tcpPorts.add(34198);
+        tcpPorts.add(25575);
         c.checkServer(domain, tcpPorts, udpPorts);
         System.out.println(c.results);
 
