@@ -3,7 +3,7 @@ package general;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Timer;
+
 
 public class IsAliveChecker {
 
@@ -46,7 +46,7 @@ public class IsAliveChecker {
                 if(t.isAlive()) allFinished = false;
             }
             long elapsedTime = (new Date()).getTime() - start;
-            System.out.println("Waiting since " + elapsedTime/1000f + " seconds");
+            //System.out.println("Waiting since " + elapsedTime/1000f + " seconds");
             if(elapsedTime/1000f > 3) {
                 System.out.println("Timed out");
                 new Thread(() -> {

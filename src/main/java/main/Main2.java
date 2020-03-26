@@ -1,9 +1,11 @@
 package main;
 
 import general.IsAliveChecker;
+import net.kronos.rkon.core.Rcon;
 import server.ServerHandler;
 import util.Helper;
 
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,6 +17,9 @@ public class Main2 {
     private static Timer t;
 
     public static void main(String[] args){
+
+
+
         IsAliveChecker c = new IsAliveChecker();
         ArrayList<Integer> tcpPorts = new ArrayList<>();
         ArrayList<Integer> udpPorts = new ArrayList<>();
@@ -24,8 +29,11 @@ public class Main2 {
         tcpPorts.add(25566);
         tcpPorts.add(27000);
         udpPorts.add(34197);
+        tcpPorts.add(34198);
         c.checkServer(domain, tcpPorts, udpPorts);
         System.out.println(c.results);
+
+
 
         try{ sh = new ServerHandler(Helper.formatInfo(c.results)); } catch (Exception e) { e.printStackTrace(); }
 
