@@ -31,7 +31,7 @@ public class Main2 {
         tcpPorts.add(7777);
         tcpPorts.add(25565);
         tcpPorts.add(25566);
-        tcpPorts.add(27000);
+        udpPorts.add(27000);
         udpPorts.add(34197);
         tcpPorts.add(34198);
         tcpPorts.add(25575);
