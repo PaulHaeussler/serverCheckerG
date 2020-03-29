@@ -3,7 +3,6 @@ package server;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
-import main.Main;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -39,7 +38,6 @@ public class ServerHandler {
 
         @Override
         public void handle(HttpExchange t) throws IOException {
-            Main.callChecks();
             String response = serverInfo;
             t.getResponseHeaders().set("Access-Control-Allow-Origin", "http://bilbosjournal.com");
             t.sendResponseHeaders(200, response.length());
