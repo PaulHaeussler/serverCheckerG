@@ -27,7 +27,8 @@ public class Main2 {
         RCONChecker rc = new RCONChecker();
 
         serverList.add(new GameServer("Avorion", GameServer.ServerType.Avorion, domain, GameServer.PortType.UDP, 27000));
-        serverList.add(new GameServer("Factorio", GameServer.ServerType.Factorio, domain, GameServer.PortType.UDP, 34197));
+        serverList.add(new GameServer("FactorioUDP", GameServer.ServerType.Factorio, domain, GameServer.PortType.UDP, 34197));
+        serverList.add(new GameServer("FactorioTCP", GameServer.ServerType.Factorio, domain, GameServer.PortType.TCP, 34197));
         serverList.add(new GameServer("Terraria", GameServer.ServerType.Terraria, domain, GameServer.PortType.TCP, 7777));
         serverList.add(new GameServer("Minecraft", GameServer.ServerType.Minecraft, domain, GameServer.PortType.TCP, 25565));
         serverList.add(new GameServer("Minecraft Modded", GameServer.ServerType.Minecraft, domain, GameServer.PortType.TCP, 25566));
