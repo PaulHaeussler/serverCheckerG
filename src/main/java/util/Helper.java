@@ -13,6 +13,7 @@ public class Helper {
         put(34197, "Factorio");
         put(34198, "FactorioRCON");
         put(25575, "MinecraftRCON");
+        put(27015, "AvorionRCON");
     }};
 
     public static byte[] hexStringToByteArray(String s) {

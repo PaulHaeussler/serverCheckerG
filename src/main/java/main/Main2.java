@@ -17,7 +17,11 @@ public class Main2 {
     private static Timer t;
 
     public static void main(String[] args){
-
+        try{
+            Rcon rcon = new Rcon(InetAddress.getByName("bilbosjournal.com").getHostAddress(), 25575, "mitsuyaCider11".getBytes());
+            System.out.println(rcon.command("help"));
+        }
+        catch (Exception e) { e.printStackTrace(); }
 
 
         IsAliveChecker c = new IsAliveChecker();
@@ -31,6 +35,7 @@ public class Main2 {
         udpPorts.add(34197);
         tcpPorts.add(34198);
         tcpPorts.add(25575);
+        tcpPorts.add(27015);
         c.checkServer(domain, tcpPorts, udpPorts);
         System.out.println(c.results);
 
