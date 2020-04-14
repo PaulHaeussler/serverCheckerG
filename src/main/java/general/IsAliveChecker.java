@@ -1,6 +1,7 @@
 package general;
 
 import util.GameServer;
+import util.Helper;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,26 +38,6 @@ public class IsAliveChecker {
             }
         }
 
-        long start = System.currentTimeMillis();
-
-        //wait for threads
-        boolean allFinished = false;
-        while(!allFinished){
-            allFinished = true;
-            for(Thread t : threads){
-                if(t.isAlive()) allFinished = false;
-            }
-            long elapsedTime = (new Date()).getTime() - start;
-            //System.out.println("Waiting since " + elapsedTime/1000f + " seconds");
-            if(elapsedTime/1000f > 3) {
-                System.out.println("Timed out");
-                new Thread(() -> {
-                    for(Thread t : threads){
-                        if(t.isAlive()) try{t.stop();} catch (Exception e){};
-                    }
-                }).start();
-                break;
-            }
-        }
+        Helper.waitForThreads(threads);
     }
 }

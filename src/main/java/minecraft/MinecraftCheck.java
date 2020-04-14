@@ -36,7 +36,7 @@ public class MinecraftCheck {
             dos.write(Helper.hexStringToByteArray("0100"));
 
 
-            new Thread(){
+            Thread t = new Thread(){
                 public void run() {
                     try{
                         Thread.sleep(100);
@@ -45,10 +45,13 @@ public class MinecraftCheck {
                         e.printStackTrace();
                     }
                 }
-            }.start();
+            };
+            t.start();
+            long start = System.currentTimeMillis();
 
             String tmp = null;
             while(tmp == null){
+                if(System.currentTimeMillis() - start > 3000) break;
                 tmp = in.readLine();
                 System.out.println(tmp);
             }

@@ -19,6 +19,7 @@ public class Main2 {
     private static Timer t;
 
     public static String domain = "bilbosjournal.com";
+    public static String RCONpassword = "mitsuyaCider11";
     public static ArrayList<GameServer> serverList = new ArrayList<>();
 
     public static void main(String[] args){
@@ -26,12 +27,12 @@ public class Main2 {
         IsAliveChecker c = new IsAliveChecker();
         RCONChecker rc = new RCONChecker();
 
-        serverList.add(new GameServer("Avorion", GameServer.ServerType.Avorion, domain, GameServer.PortType.UDP, 27000));
-        serverList.add(new GameServer("FactorioUDP", GameServer.ServerType.Factorio, domain, GameServer.PortType.UDP, 34197));
-        serverList.add(new GameServer("FactorioTCP", GameServer.ServerType.Factorio, domain, GameServer.PortType.TCP, 34197));
-        serverList.add(new GameServer("Terraria", GameServer.ServerType.Terraria, domain, GameServer.PortType.TCP, 7777));
-        serverList.add(new GameServer("Minecraft", GameServer.ServerType.Minecraft, domain, GameServer.PortType.TCP, 25565));
+        serverList.add(new GameServer("Avorion", GameServer.ServerType.Avorion, domain, GameServer.PortType.UDP, 27000, 27015, RCONpassword));
+        serverList.add(new GameServer("Factorio", GameServer.ServerType.Factorio, domain, GameServer.PortType.UDP, 34197, 34198, RCONpassword));
+        serverList.add(new GameServer("Terraria", GameServer.ServerType.Terraria, domain, GameServer.PortType.TCP, 7777, 7878, RCONpassword));
+        serverList.add(new GameServer("Minecraft", GameServer.ServerType.Minecraft, domain, GameServer.PortType.TCP, 25565, 25575, RCONpassword));
         serverList.add(new GameServer("Minecraft Modded", GameServer.ServerType.Minecraft, domain, GameServer.PortType.TCP, 25566));
+        /*
         serverList.add(new GameServer("TerrariaRCONTCP", GameServer.ServerType.Terraria, domain, GameServer.PortType.TCP, 7878));
         serverList.add(new GameServer("TerrariaRCONUDP", GameServer.ServerType.Terraria, domain, GameServer.PortType.UDP, 7878));
         serverList.add(new GameServer("MinecraftRCONTCP", GameServer.ServerType.Terraria, domain, GameServer.PortType.TCP, 25575));
@@ -40,7 +41,7 @@ public class Main2 {
         serverList.add(new GameServer("AvorionRCONUDP", GameServer.ServerType.Terraria, domain, GameServer.PortType.UDP, 27015));
         serverList.add(new GameServer("FactorioRCONTCP", GameServer.ServerType.Terraria, domain, GameServer.PortType.TCP, 34198));
         serverList.add(new GameServer("FactorioRCONUDP", GameServer.ServerType.Terraria, domain, GameServer.PortType.UDP, 34198));
-
+        */
 
         c.checkServer(serverList);
         rc.checkRCONServers(serverList);
